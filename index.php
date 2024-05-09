@@ -1,4 +1,6 @@
 <?php
+
+$films = [];
 class Production
 {
 
@@ -20,6 +22,10 @@ $Star_Wars = new Production('Star Wars','eng',7);
 $Pulp_Fiction = new Production('Pulp Fiction','eng',9);
 $Inglorious_Bastards = new Production('Bastardi senza gloria','eng',10);
 
-var_dump($Star_Wars);
+array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
+
+//$films[]= $Star_Wars . $Pulp_Fiction . $Inglorious_Bastards; 
+
+var_dump($films);
 
 
