@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__.'/profits.php';
 $films = [];
 class Production
 {
@@ -7,24 +7,32 @@ class Production
     public $title;
     public $lang;
     public $vote;
+    //public $profits;
 
-    function __construct($_title, $_lang, $_vote)
+    function __construct($_title, $_lang, $_vote,)
     {
         $this->title = $_title;
         $this->lang = $_lang;
         $this->vote = $_vote;
+        //$this->profits = $_profits;
     }
+
+    // public function setProfits(Profits $_profits) 
+    // {
+    //     $this->profits = $_profits;
+    // }
+
 }
 
-$Star_Wars = new Production('Star Wars', 'eng', 7);
-$Pulp_Fiction = new Production('Pulp Fiction', 'eng', 9);
-$Inglorious_Bastards = new Production('Bastardi senza gloria', 'eng', 10);
+$Star_Wars = new Profits('Star Wars', 'eng', 7,'1.000.000','90 min');
+$Pulp_Fiction = new Profits('Pulp Fiction', 'eng', 9,'10.000.000','104 min');
+$Inglorious_Bastards = new Profits('Bastardi senza gloria', 'eng', 10,'100.000.000','134 min');
 
 array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
 
 //$films[]= $Star_Wars . $Pulp_Fiction . $Inglorious_Bastards; 
 
-//var_dump($films);
+var_dump($films);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +48,7 @@ array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row py-4">
             <?php
             foreach ($films as $film) {
             ?>
@@ -50,6 +58,8 @@ array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
                         <p>Titolo: <?= $film->title ?></p>
                         <p>Lingua: <?= $film->lang ?></p>
                         <p>Voto: <?= $film->vote ?></p>
+                        <p>Incasso: <?= $film->profits ?></p>
+                        <p>Durata: <?= $film->length ?></p>
                     </div>
                 </div>
 
