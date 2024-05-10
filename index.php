@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__.'/movie.php';
+require_once __DIR__.'/Models/Movie.php';
+require_once __DIR__.'/Models//Tvseries.php';
 $films = [];
+$series = [];
 class Production
 {
 
@@ -27,8 +29,9 @@ class Production
 $Star_Wars = new Movie('Star Wars', 'eng', 7,'1.000.000','90 min');
 $Pulp_Fiction = new Movie('Pulp Fiction', 'eng', 9,'10.000.000','104 min');
 $Inglorious_Bastards = new Movie('Bastardi senza gloria', 'eng', 10,'100.000.000','134 min');
-
+$Walking_dead = new TvSeries('The Walking Dead', 'eng', 10, 10);
 array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
+array_push($series, $Walking_dead);
 
 //$films[]= $Star_Wars . $Pulp_Fiction . $Inglorious_Bastards; 
 
@@ -60,6 +63,25 @@ array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
                         <p>Voto: <?= $film->vote ?></p>
                         <p>Incasso: <?= $film->profits ?></p>
                         <p>Durata: <?= $film->length ?></p>
+                    </div>
+                </div>
+
+            <?php
+            }
+            ?>
+        </div>
+        <div class="row py-4">
+            <?php
+            foreach ($series as $serie) {
+            ?>
+
+                <div class="col-4">
+                    <div class="card">
+                        <p>Titolo: <?= $serie->title ?></p>
+                        <p>Lingua: <?= $serie->lang ?></p>
+                        <p>Voto: <?= $serie->vote ?></p>
+                        <p>Season <?= $serie->season ?></p>
+                        
                     </div>
                 </div>
 
