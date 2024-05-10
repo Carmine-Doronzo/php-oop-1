@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__.'/index.php';
-class Profits extends Production{
+//require_once __DIR__.'/index.php';
+class Movie extends Production{
 
     public $profits;
     public $length;

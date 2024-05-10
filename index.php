@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/profits.php';
+require_once __DIR__.'/movie.php';
 $films = [];
 class Production
 {
@@ -24,15 +24,15 @@ class Production
 
 }
 
-$Star_Wars = new Profits('Star Wars', 'eng', 7,'1.000.000','90 min');
-$Pulp_Fiction = new Profits('Pulp Fiction', 'eng', 9,'10.000.000','104 min');
-$Inglorious_Bastards = new Profits('Bastardi senza gloria', 'eng', 10,'100.000.000','134 min');
+$Star_Wars = new Movie('Star Wars', 'eng', 7,'1.000.000','90 min');
+$Pulp_Fiction = new Movie('Pulp Fiction', 'eng', 9,'10.000.000','104 min');
+$Inglorious_Bastards = new Movie('Bastardi senza gloria', 'eng', 10,'100.000.000','134 min');
 
 array_push($films, $Star_Wars, $Pulp_Fiction, $Inglorious_Bastards);
 
 //$films[]= $Star_Wars . $Pulp_Fiction . $Inglorious_Bastards; 
 
-var_dump($films);
+//var_dump($films);
 ?>
 
 <!DOCTYPE html>
